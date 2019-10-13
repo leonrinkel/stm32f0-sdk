@@ -67,7 +67,7 @@ void SystemClock_Init(void)
     ret = HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1);
     if (ret != HAL_OK)
     {
-        while(1); 
+        while (1); 
     }
 }
 
