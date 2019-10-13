@@ -1,0 +1,224 @@
+################################################################################
+# Project Settings                                                             #
+################################################################################
+
+PROJECT = stm32f0-blinky
+
+SRC_ROOT = $(shell pwd)/../../src
+INC_ROOT = $(shell pwd)/../../inc
+STM_ROOT = $(shell pwd)/../../STM32CubeF0
+
+OUT_ROOT = $(shell pwd)/out
+
+################################################################################
+# Compiler Settings                                                            #
+################################################################################
+
+AS = arm-none-eabi-gcc
+CC = arm-none-eabi-gcc
+LD = arm-none-eabi-gcc
+
+# General compiler flags for .s files
+ASFLAGS = \
+	$(TARGET_ASFLAGS) \
+	-mcpu=cortex-m0 \
+	-mthumb \
+	-Wall
+
+# General compiler flags for .c files
+CFLAGS = \
+	$(TARGET_CFLAGS) \
+	-mcpu=cortex-m0 \
+	-mthumb \
+	-Wall \
+	--specs=nosys.specs \
+	-I$(SRC_ROOT) \
+	-g3 \
+	-O0 \
+	-fdata-sections \
+	-ffunction-sections
+
+# General linker flags
+LDFLAGS = \
+	$(TARGET_LDFLAGS) \
+	-mcpu=cortex-m0 \
+	-mthumb \
+	-Wall \
+	--specs=nosys.specs \
+	-lgcc \
+	-Wl,--gc-sections
+
+################################################################################
+# Flash / Debug Settings                                                       #
+################################################################################
+
+PYOCD = pyocd
+
+################################################################################
+# Input Files                                                                  #
+################################################################################
+
+# STM HAL source files
+HAL_SRC_FILES = \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_can.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cec.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_comp.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_crc_ex.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_crc.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dac_ex.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dac.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2s.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_irda.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_iwdg.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd_ex.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rtc_ex.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rtc.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_smartcard_ex.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_smartcard.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_smbus.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_spi_ex.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_spi.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tsc.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_usart.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_wwdg.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_adc.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_comp.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_crc.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_crs.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_dac.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_dma.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_exti.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_gpio.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_i2c.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_pwr.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_rcc.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_rtc.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_spi.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_tim.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_usart.c \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_utils.c
+
+# General source files
+SRC_FILES = \
+	$(TARGET_SRC_FILES) \
+	$(HAL_SRC_FILES) \
+	$(SRC_ROOT)/system_stm32f0xx.c \
+	$(SRC_ROOT)/stm32f0xx_it.c \
+	$(SRC_ROOT)/main.c
+
+# General include dirs
+INC_DIRS = \
+	$(TARGET_INC_DIRS) \
+	$(INC_ROOT) \
+	$(STM_ROOT)/Drivers/CMSIS/Include \
+	$(STM_ROOT)/Drivers/CMSIS/Device/ST/STM32F0xx/Include \
+	$(STM_ROOT)/Drivers/STM32F0xx_HAL_Driver/Inc
+
+# Use specified include dirs
+CFLAGS += $(foreach INC_DIR,$(INC_DIRS),-I$(INC_DIR))
+
+################################################################################
+# Compilation Helper Functions                                                 #
+################################################################################
+
+# Get target file name from source file name
+# $(1): source .s or .c file
+# returns target .o file
+define get_obj_file
+$(addprefix $(OUT_ROOT)/,$(notdir $(patsubst %.c,%.o,$(filter %.c,$(1))))) \
+$(addprefix $(OUT_ROOT)/,$(notdir $(patsubst %.s,%.o,$(filter %.s,$(1)))))
+endef
+
+# Execute $(AS) to assemble a source file
+# $(1): target .o file
+# $(2): source .s file
+define execute_as
+@echo "[AS] $(strip $(1))" ; \
+$(AS) -x assembler-with-cpp -c -o $(1) $(2) $(ASFLAGS)
+endef
+
+# Execute $(CC) to compile a source file
+# $(1): target .o file
+# $(2): source .c file
+define execute_cc
+@echo "[CC] $(strip $(1))" ; \
+$(CC) -c -o $(1) $(2) $(CFLAGS)
+endef
+
+# Add a target to assemble a .s file
+# $(1): target .o file
+# $(2): source .s file
+define add_as_target
+$(eval $(1): $(2); $(call execute_as,$(1),$(2)))
+endef
+
+# Add a target to compile a .c file
+# $(1): target .o file
+# $(2): source .c file
+define add_cc_target
+$(eval $(1): $(2); $(call execute_cc,$(1),$(2)))
+endef
+
+################################################################################
+# Main Part                                                                    #
+################################################################################
+
+.PHONY: all flash clean
+
+OUT_ELF = $(OUT_ROOT)/$(PROJECT).elf
+OUT_BIN = $(OUT_ROOT)/$(PROJECT).bin
+OUT_HEX = $(OUT_ROOT)/$(PROJECT).hex
+all: $(OUT_ROOT) $(OUT_ELF) $(OUT_BIN) $(OUT_HEX)
+
+# Create output folder
+$(OUT_ROOT):
+	mkdir -p $@
+
+# Create targets for each source file
+$(foreach S_FILE,$(filter %.s,$(SRC_FILES)),$(call add_as_target,\
+$(call get_obj_file,$(S_FILE)),$(S_FILE)))
+$(foreach C_FILE,$(filter %.c,$(SRC_FILES)),$(call add_cc_target,\
+$(call get_obj_file,$(C_FILE)),$(C_FILE)))
+
+# Link all object files
+OBJ_FILES = $(call get_obj_file,$(SRC_FILES))
+$(OUT_ELF): $(OBJ_FILES)
+	@echo "[LD] $@"
+	@$(LD) -o $@ $^ $(LDFLAGS)
+
+# Convert elf to binary file
+$(OUT_BIN): $(OUT_ELF)
+	@echo "[OBJCOPY] $@"
+	@arm-none-eabi-objcopy -O binary $< $@
+
+# Convert elf to ihex file
+$(OUT_HEX): $(OUT_ELF)
+	@echo "[OBJCOPY] $@"
+	@arm-none-eabi-objcopy -O ihex $< $@
+
+# Flash target
+flash: $(OUT_ROOT) $(OUT_ELF)
+	$(PYOCD) flash -v --format elf $(OUT_ELF)
+
+# Remove output files
+clean:
+	rm $(OUT_ROOT)/*

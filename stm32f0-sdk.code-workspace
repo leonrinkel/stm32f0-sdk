@@ -1,0 +1,55 @@
+{
+	"folders": [
+		{
+			"path": "targets/stm32f030x6"
+		},
+		{
+			"path": "targets/stm32f030x8"
+		},
+		{
+			"path": "targets/stm32f030xc"
+		},
+		{
+			"path": "targets/stm32f031x6"
+		},
+		{
+			"path": "targets/stm32f038xx"
+		},
+		{
+			"path": "targets/stm32f042x6"
+		},
+		{
+			"path": "targets/stm32f048xx"
+		},
+		{
+			"path": "targets/stm32f051x8"
+		},
+		{
+			"path": "targets/stm32f058xx"
+		},
+		{
+			"path": "targets/stm32f070x6"
+		},
+		{
+			"path": "targets/stm32f070xb"
+		},
+		{
+			"path": "targets/stm32f071xb"
+		},
+		{
+			"path": "targets/stm32f072xb"
+		},
+		{
+			"path": "targets/stm32f078xx"
+		},
+		{
+			"path": "targets/stm32f091xc"
+		},
+		{
+			"path": "targets/stm32f098xx"
+		},
+		{
+			"path": "."
+		}
+	]
+}

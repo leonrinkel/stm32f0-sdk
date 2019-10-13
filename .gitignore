@@ -1,0 +1,5 @@
+# build output
+/targets/*/out
+
+# misc
+**/.DS_Store

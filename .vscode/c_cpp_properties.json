@@ -1,0 +1,312 @@
+{
+    "version": 4,
+    "env": {
+        "STM_ROOT": "STM32CubeF0"
+    },
+    "configurations": [
+        {
+            "name": "STM32F030x6",
+            "defines": [ "STM32F030x6" ],
+            "includePath": [
+                "src", "inc",
+                "${STM_ROOT}/Drivers/CMSIS/Include",
+                "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+            ],
+            "browse": {
+                "path": [
+                    "src", "inc",
+                    "${STM_ROOT}/Drivers/CMSIS/Include",
+                    "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                    "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        },
+        {
+            "name": "STM32F030x8",
+            "defines": [ "STM32F030x8" ],
+            "includePath": [
+                "src", "inc",
+                "${STM_ROOT}/Drivers/CMSIS/Include",
+                "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+            ],
+            "browse": {
+                "path": [
+                    "src", "inc",
+                    "${STM_ROOT}/Drivers/CMSIS/Include",
+                    "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                    "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        },
+        {
+            "name": "STM32F030xC",
+            "defines": [ "STM32F030xC" ],
+            "includePath": [
+                "src", "inc",
+                "${STM_ROOT}/Drivers/CMSIS/Include",
+                "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+            ],
+            "browse": {
+                "path": [
+                    "src", "inc",
+                    "${STM_ROOT}/Drivers/CMSIS/Include",
+                    "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                    "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        },
+        {
+            "name": "STM32F031x6",
+            "defines": [ "STM32F031x6" ],
+            "includePath": [
+                "src", "inc",
+                "${STM_ROOT}/Drivers/CMSIS/Include",
+                "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+            ],
+            "browse": {
+                "path": [
+                    "src", "inc",
+                    "${STM_ROOT}/Drivers/CMSIS/Include",
+                    "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                    "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        },
+        {
+            "name": "STM32F038xx",
+            "defines": [ "STM32F038xx" ],
+            "includePath": [
+                "src", "inc",
+                "${STM_ROOT}/Drivers/CMSIS/Include",
+                "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+            ],
+            "browse": {
+                "path": [
+                    "src", "inc",
+                    "${STM_ROOT}/Drivers/CMSIS/Include",
+                    "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                    "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        },
+        {
+            "name": "STM32F042x6",
+            "defines": [ "STM32F042x6" ],
+            "includePath": [
+                "src", "inc",
+                "${STM_ROOT}/Drivers/CMSIS/Include",
+                "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+            ],
+            "browse": {
+                "path": [
+                    "src", "inc",
+                    "${STM_ROOT}/Drivers/CMSIS/Include",
+                    "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                    "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        },
+        {
+            "name": "STM32F048xx",
+            "defines": [ "STM32F048xx" ],
+            "includePath": [
+                "src", "inc",
+                "${STM_ROOT}/Drivers/CMSIS/Include",
+                "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+            ],
+            "browse": {
+                "path": [
+                    "src", "inc",
+                    "${STM_ROOT}/Drivers/CMSIS/Include",
+                    "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                    "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        },
+        {
+            "name": "STM32F051x8",
+            "defines": [ "STM32F051x8" ],
+            "includePath": [
+                "src", "inc",
+                "${STM_ROOT}/Drivers/CMSIS/Include",
+                "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+            ],
+            "browse": {
+                "path": [
+                    "src", "inc",
+                    "${STM_ROOT}/Drivers/CMSIS/Include",
+                    "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                    "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        },
+        {
+            "name": "STM32F058xx",
+            "defines": [ "STM32F058xx" ],
+            "includePath": [
+                "src", "inc",
+                "${STM_ROOT}/Drivers/CMSIS/Include",
+                "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+            ],
+            "browse": {
+                "path": [
+                    "src", "inc",
+                    "${STM_ROOT}/Drivers/CMSIS/Include",
+                    "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                    "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        },
+        {
+            "name": "STM32F070x6",
+            "defines": [ "STM32F070x6" ],
+            "includePath": [
+                "src", "inc",
+                "${STM_ROOT}/Drivers/CMSIS/Include",
+                "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+            ],
+            "browse": {
+                "path": [
+                    "src", "inc",
+                    "${STM_ROOT}/Drivers/CMSIS/Include",
+                    "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                    "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        },
+        {
+            "name": "STM32F070xB",
+            "defines": [ "STM32F070xB" ],
+            "includePath": [
+                "src", "inc",
+                "${STM_ROOT}/Drivers/CMSIS/Include",
+                "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+            ],
+            "browse": {
+                "path": [
+                    "src", "inc",
+                    "${STM_ROOT}/Drivers/CMSIS/Include",
+                    "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                    "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        },
+        {
+            "name": "STM32F071xB",
+            "defines": [ "STM32F071xB" ],
+            "includePath": [
+                "src", "inc",
+                "${STM_ROOT}/Drivers/CMSIS/Include",
+                "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+            ],
+            "browse": {
+                "path": [
+                    "src", "inc",
+                    "${STM_ROOT}/Drivers/CMSIS/Include",
+                    "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                    "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        },
+        {
+            "name": "STM32F072xB",
+            "defines": [ "STM32F072xB" ],
+            "includePath": [
+                "src", "inc",
+                "${STM_ROOT}/Drivers/CMSIS/Include",
+                "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+            ],
+            "browse": {
+                "path": [
+                    "src", "inc",
+                    "${STM_ROOT}/Drivers/CMSIS/Include",
+                    "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                    "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        },
+        {
+            "name": "STM32F078xx",
+            "defines": [ "STM32F078xx" ],
+            "includePath": [
+                "src", "inc",
+                "${STM_ROOT}/Drivers/CMSIS/Include",
+                "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+            ],
+            "browse": {
+                "path": [
+                    "src", "inc",
+                    "${STM_ROOT}/Drivers/CMSIS/Include",
+                    "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                    "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        },
+        {
+            "name": "STM32F091xC",
+            "defines": [ "STM32F091xC" ],
+            "includePath": [
+                "src", "inc",
+                "${STM_ROOT}/Drivers/CMSIS/Include",
+                "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+            ],
+            "browse": {
+                "path": [
+                    "src", "inc",
+                    "${STM_ROOT}/Drivers/CMSIS/Include",
+                    "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                    "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        },
+        {
+            "name": "STM32F098xx",
+            "defines": [ "STM32F098xx" ],
+            "includePath": [
+                "src", "inc",
+                "${STM_ROOT}/Drivers/CMSIS/Include",
+                "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+            ],
+            "browse": {
+                "path": [
+                    "src", "inc",
+                    "${STM_ROOT}/Drivers/CMSIS/Include",
+                    "${STM_ROOT}/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
+                    "${STM_ROOT}/Drivers/STM32F0xx_HAL_Driver/Inc"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ]
+}
