@@ -1,4 +1,4 @@
-#include "stm32f0xx_hal.h"
+#include "main.h"
 
 void HardFault_Handler(void)
 {
@@ -8,4 +8,9 @@ void HardFault_Handler(void)
 void SysTick_Handler(void)
 {
     HAL_IncTick();
+}
+
+void USART2_IRQHandler(void)
+{
+    HAL_UART_IRQHandler(&uart);
 }
