@@ -1,0 +1,30 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/out/stm32f0-blinky.elf",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "arm-none-eabi-gdb",
+            "debugServerPath": "pyocd",
+            "debugServerArgs": "gdbserver",
+            "serverStarted": "INFO:gdbserver:GDB server started on port 3333",
+            "filterStderr": true,
+            "setupCommands": [
+                { "text": "target extended-remote localhost:3333" },
+                { "text": "load ${workspaceFolder}/out/stm32f0-blinky.elf" },
+                { "text": "monitor reset" }
+            ]
+        }
+    ]
+}
